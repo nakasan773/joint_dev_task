@@ -5,6 +5,8 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+array_push($names,"斎藤");
+print_r($names);
 
 echo PHP_EOL;
 
@@ -13,6 +15,8 @@ $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 
   # 以下に回答を記載
+$array = array_merge($array1,$array2);
+print_r($array);
 
 echo PHP_EOL;
 
