@@ -35,11 +35,12 @@ $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
 $count = 0;
 foreach($numbers as $number){
-　if($number === 3){
-    　$count++;
+   if($number === 3){
+      $count++;
    }
 }
-print_r($count . "回");
+echo $count . "回";
+?>
 
 echo PHP_EOL;
 
@@ -47,6 +48,11 @@ print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
+<?php
+$sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
+array_diff ($sports, [unll] );
+print_r ($sports);
+?>
 
 echo PHP_EOL;
 
