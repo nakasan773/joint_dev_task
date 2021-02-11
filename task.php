@@ -50,7 +50,7 @@ $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null,
   # 以下に回答を記載
 <?php
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
-array_diff ($sports, [unll] );
+$sports = array_diff ($sports, [null] );
 print_r ($sports);
 ?>
 
@@ -61,6 +61,21 @@ $array1 = [];
 $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
+<?php
+$array1 = [];
+if (empty($array1)){
+  echo "true";
+}else{
+  echo "false";
+};
+echo PHP_EOL;
+$array2 = [1, 5, 8, 10];
+if (empty($array2)){
+  echo "true";
+}else {
+  echo "false";
+};
+?>
 
 echo PHP_EOL;
 
@@ -68,6 +83,14 @@ print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+<?php
+$numbers1 = [1, 2, 3, 4, 5];
+$numbers2 = [];
+foreach ($numbers1 as $value){
+  $numbers2[] = $value * 10;
+}
+print_r ($numbers2);
+?>
 
 echo PHP_EOL;
 
@@ -75,6 +98,11 @@ print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
+<?php
+$array = ["1", "2", "3", "4", "5"];
+$num = (int)$array;
+print_r($array);
+?>
 
 echo PHP_EOL;
 
@@ -82,6 +110,14 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php","ruby","python","javascript"];
 
   # 以下に回答を記載
+<?php
+$programming_languages = ["php","ruby","python","javascript"];
+$programming_languages = array_map('ucwords',$programming_languages);
+$upper_case_programming_languages = array_map('strtoupper',$programming_languages);
+print_r($programming_languages);
+echo PHP_EOL;
+print_r($upper_case_programming_languages);
+?>
 
   # 以下は変更しないで下さい
 print_r($programming_languages);
