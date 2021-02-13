@@ -100,7 +100,7 @@ $array = ["1", "2", "3", "4", "5"];
   # 以下に回答を記載
 <?php
 $array = ["1", "2", "3", "4", "5"];
-$num = (int)$array;
+$array = array_map('intval',$array);
 print_r($array);
 ?>
 
@@ -130,6 +130,16 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+<?php
+$names = ["田中", "佐藤", "佐々木", "高橋"];
+$names2 = [];
+foreach($names as $key => $name){
+$number = $key+1;
+$name2 = "会員No.".$number." ".$name;
+array_push($names2,$name2);
+}
+print_r($names2);
+?>
 
 echo PHP_EOL;
 
@@ -137,6 +147,18 @@ print("#####q10#####".PHP_EOL);
 $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼"];
 
   # 以下に回答を記載
+<?php
+$foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼"];
+foreach($foods as $food){
+  if(preg_match('/うに/',$food)){
+      echo '好物です';
+      echo PHP_EOL;
+  }else{
+      echo 'まぁまぁ好きです';
+      echo PHP_EOL;
+  }
+}
+?>
 
 echo PHP_EOL;
 
@@ -144,13 +166,21 @@ print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
   # 以下に回答を記載
+<?php
+$sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
+?>
 echo PHP_EOL;
 
 print("#####q12#####".PHP_EOL);
 $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 
   # 以下に回答を記載
+<?php
+$data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
+echo $data ['user']['name'];
+?>
+
 
 echo PHP_EOL;
 
@@ -159,7 +189,12 @@ $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = [ "age" => 32, "address" => "沖縄" ];
 
   # 以下に回答を記載
-
+<?php
+$user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
+$update_data = [ "age" => 32, "address" => "沖縄" ];
+$user_data = array_merge($user_data, $update_data);
+print_r ($user_data);
+?>
 echo PHP_EOL;
 
 print("#####q14#####".PHP_EOL);
