@@ -167,9 +167,34 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 
   # 以下に回答を記載
 <?php
+
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
+$sports2 = [];
+
+foreach($sports as $key => $sport){
+if(is_array($sport)){
+$sports2 = array_merge($sports2,$sport);
+}else{
+array_push($sports2,$sport);
+}
+}
+$sports2 = array_unique($sports2);
+$sports2 = array_values($sports2);
+$sports3 = [];
+foreach($sports2 as $key => $sport){
+$number = $key + 1;
+$sport3 = "No.".$number." ".$sport;
+array_push($sports3,$sport3);
+}
+
+echo "ユーザの趣味一覧".PHP_EOL;
+foreach($sports3 as $sport){
+echo $sport.PHP_EOL;
+}
 
 ?>
+
+
 echo PHP_EOL;
 
 print("#####q12#####".PHP_EOL);
@@ -201,6 +226,14 @@ print("#####q14#####".PHP_EOL);
 $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
 
   # 以下に回答を記載
+<?php
+$data = [ "name" => "satou", "age" =>  33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
+$data2 =[];
+foreach ($data as $one_data){
+  array_push ($data2,$one_data);
+}
+print_r ($data2);
+?>
 
 echo PHP_EOL;
 
@@ -209,6 +242,21 @@ $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admi
 $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
 
   # 以下に回答を記載
+<?php
+$data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
+if (array_key_exists("age", $data1)) {
+    echo "OK".PHP_EOL;
+}else{
+    echo "NG".PHP_EOL;
+}
+$data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
+if (array_key_exists("age", $data2)) {
+    echo "OK".PHP_EOL;
+}else{
+    echo "NG".PHP_EOL;
+}
+
+?>
 
 echo PHP_EOL;
 
@@ -221,6 +269,18 @@ $users = [
 ];
 
   # 以下に回答を記載
+<?php
+$users = [
+  [ "name" => "satou", "age" => 22 ],
+  [ "name" => "yamada", "age" => 12 ],
+  [ "name" => "takahashi", "age" => 32 ],
+  [ "name" => "nakamura", "age" => 41 ]
+  ];
+  foreach($users as $key=>$user){
+    echo '私の名前は'.$user["name"].'です。'.'年齢は'.$user["age"].'歳です。';
+    echo PHP_EOL;
+}
+?>
 
 echo PHP_EOL;
 
