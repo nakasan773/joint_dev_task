@@ -134,9 +134,9 @@ $names = ["田中", "佐藤", "佐々木", "高橋"];
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 $names2 = [];
 foreach($names as $key => $name){
-$number = $key+1;
-$name2 = "会員No.".$number." ".$name;
-array_push($names2,$name2);
+    $number = $key+1;
+    $name2 = "会員No.".$number." ".$name;
+    array_push($names2,$name2);
 }
 print_r($names2);
 ?>
@@ -172,24 +172,24 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 $sports2 = [];
 
 foreach($sports as $key => $sport){
-if(is_array($sport)){
-$sports2 = array_merge($sports2,$sport);
-}else{
-array_push($sports2,$sport);
-}
+  if(is_array($sport)){
+    $sports2 = array_merge($sports2,$sport);
+  }else{
+    array_push($sports2,$sport);
+  }
 }
 $sports2 = array_unique($sports2);
 $sports2 = array_values($sports2);
 $sports3 = [];
 foreach($sports2 as $key => $sport){
-$number = $key + 1;
-$sport3 = "No.".$number." ".$sport;
-array_push($sports3,$sport3);
+    $number = $key + 1;
+    $sport3 = "No.".$number." ".$sport;
+    array_push($sports3,$sport3);
 }
 
 echo "ユーザの趣味一覧".PHP_EOL;
 foreach($sports3 as $sport){
-echo $sport.PHP_EOL;
+    echo $sport.PHP_EOL;
 }
 
 ?>
@@ -217,7 +217,9 @@ $update_data = [ "age" => 32, "address" => "沖縄" ];
 <?php
 $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = [ "age" => 32, "address" => "沖縄" ];
-$user_data = array_merge($user_data, $update_data);
+
+$user_data = array_merge ($user_data, $update_data);
+
 print_r ($user_data);
 ?>
 echo PHP_EOL;
@@ -276,7 +278,7 @@ $users = [
   [ "name" => "takahashi", "age" => 32 ],
   [ "name" => "nakamura", "age" => 41 ]
   ];
-  foreach($users as $key=>$user){
+foreach($users as $key=>$user){
     echo '私の名前は'.$user["name"].'です。'.'年齢は'.$user["age"].'歳です。';
     echo PHP_EOL;
 }
