@@ -376,18 +376,43 @@ print($book->name.PHP_EOL);
 echo PHP_EOL;
 
 print("#####q20#####".PHP_EOL);
+
+<?php
+
 class Human
 {
+  public $name;
+  public $age;
 
-  # コードを追加
-
+  function __construct($user_name,$user_age){
+    $this->name = $user_name;
+    $this->age = $user_age;
+  }
 }
 
 class Zoo
 {
-    
-  # コードを追加
-    
+  protected $name;
+  protected $entry_fee;
+
+  function __construct($zoo_name,$zoo_entry_fee){
+    $this->name = $zoo_name;
+    $this->entry_fee = $zoo_entry_fee;
+  }
+
+  function info_entry_fee(Human $human){
+    if($human->age <= 5){
+      echo $human->name."さんの入場料金は ".$this->entry_fee["infant"]." 円です。".PHP_EOL;
+    }elseif($human->age <= 20){
+      echo $human->name."さんの入場料金は ".$this->entry_fee["children"]." 円です。".PHP_EOL;
+    }elseif($human->age <= 50){
+      echo $human->name."さんの入場料金は ".$this->entry_fee["adult"]." 円です。".PHP_EOL;
+    }elseif($human->age <= 110){
+      echo $human->name."さんの入場料金は ".$this->entry_fee["senior"]." 円です。".PHP_EOL;
+    }
+  }
+
+
 }
 
 $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
@@ -403,4 +428,12 @@ foreach($humans as $human){
   $zoo->info_entry_fee($human);
 }
 
+?>
+
 echo PHP_EOL;
+
+print("#####q21#####".PHP_EOL);
+
+<?php
+
+?>
