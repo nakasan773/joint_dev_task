@@ -335,7 +335,7 @@ class Man
   }
 
   function introduce(){
-    if($this->age >=30){
+    if($this->age >= 30){
       echo "こんにちは、".$this->name."と申します。宜しくお願いいたします。".PHP_EOL;
     }else{
       echo "はいさいまいど〜、".$this->name."です！！！".PHP_EOL;
